@@ -289,7 +289,7 @@ class OAuthenticator(Authenticator):
         return [
             (r'/oauth_login', self.login_handler),
             (r'/oauth_callback', self.callback_handler),
-            ('/lti/launch', LTIAuthenticateHandler),
+            ('/lti/launch', LTIAuthenticator),
         ]
 
     async def authenticate(self, handler, data=None):
