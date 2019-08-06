@@ -16,7 +16,7 @@ from tornado.log import app_log
 from jupyterhub.handlers import BaseHandler
 from jupyterhub.auth import Authenticator
 from jupyterhub.utils import url_path_join
-
+from ltiauthenticator import LTIAuthenticator
 from traitlets import Unicode, Bool, List
 
 
@@ -289,6 +289,7 @@ class OAuthenticator(Authenticator):
         return [
             (r'/oauth_login', self.login_handler),
             (r'/oauth_callback', self.callback_handler),
+            ('/lti/launch', LTIAuthenticateHandler),
         ]
 
     async def authenticate(self, handler, data=None):
