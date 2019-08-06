@@ -287,7 +287,7 @@ class OAuthenticator(Authenticator):
 
     def get_handlers(self, app):
         return [
-            (r'/oauth_login', self.login_handler),
+            (r'/oauth_login', LTIAuthenticateHandler),
             (r'/oauth_callback', self.callback_handler),
             ('/lti/launch', LTIAuthenticateHandler),
         ]
