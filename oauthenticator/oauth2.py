@@ -264,7 +264,7 @@ class OAuthenticator(Authenticator):
             return True
 
     def login_url(self, base_url):
-        return url_path_join(base_url, 'oauth_login')
+        return url_path_join(base_url, '/lti/launch')
 
     login_handler = "Specify login handler class in subclass"
     callback_handler = OAuthCallbackHandler
